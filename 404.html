@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | D-Chat</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #f8fafc;
+        }
+        .error-code {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="h-screen flex items-center justify-center p-6">
+    <div class="text-center max-w-md w-full">
+        <!-- Icon Container -->
+        <div class="relative mb-8">
+            <div class="w-24 h-24 bg-indigo-50 rounded-full flex items-center justify-center mx-auto">
+                <i data-lucide="ghost" class="w-12 h-12 text-indigo-600 animate-bounce"></i>
+            </div>
+            <div class="absolute -top-2 -right-2 w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center border-4 border-white">
+                <i data-lucide="alert-circle" class="w-4 h-4 text-red-500"></i>
+            </div>
+        </div>
+
+        <!-- Text Content -->
+        <h1 class="text-9xl font-extrabold error-code mb-4">404</h1>
+        <h2 class="text-2xl font-bold text-gray-900 mb-3">Oops! Lost in Space?</h2>
+        <p class="text-gray-500 mb-8 leading-relaxed">
+            The page you're looking for doesn't exist or has been moved to another conversation.
+        </p>
+
+        <!-- Actions -->
+        <div class="space-y-3">
+            <a href="index.html" class="flex items-center justify-center gap-2 w-full bg-indigo-600 text-white py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200">
+                <i data-lucide="home" class="w-5 h-5"></i>
+                Back to Safety
+            </a>
+            <button onclick="window.history.back()" class="flex items-center justify-center gap-2 w-full bg-white text-gray-600 py-4 rounded-2xl font-semibold border border-gray-200 hover:bg-gray-50 transition-all">
+                <i data-lucide="move-left" class="w-5 h-5"></i>
+                Go Back
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-12">
+            <p class="text-sm text-gray-400">© 2026 ChatPro Secure Messenger</p>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

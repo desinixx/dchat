@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>About D-Chat | Enterprise Messaging</title>
+    <!--favicon-->
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --bg-color: #020617;
+            --primary: #3b82f6;
+            --accent: #10b981;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.8));
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 20px 40px -10px rgba(59, 130, 246, 0.15);
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(90px);
+            z-index: -1;
+            opacity: 0.5;
+            animation: float 10s infinite alternate ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -50px) scale(1.1); }
+            100% { transform: translate(-20px, 30px) scale(0.9); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #60a5fa, #34d399);
+        }
+        
+        .text-gradient-alt {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #c084fc, #60a5fa);
+        }
+
+        /* Logo Enhancement */
+        .logo-main {
+            filter: invert(1);
+            transition: transform 0.3s ease;
+        }
+        .logo-main:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Ambient Background Blobs -->
+    <div class="blob bg-blue-600/30 w-[400px] h-[400px] rounded-full top-[-100px] left-[-100px]"></div>
+    <div class="blob bg-emerald-600/20 w-[500px] h-[500px] rounded-full top-[40%] right-[-150px]"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b-0 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <!-- Enlarged Nav Logo -->
+                <img src="dchat logo.png" alt="D-Chat Logo" class="h-14 w-auto object-contain logo-main">
+                <span class="text-2xl font-bold tracking-tight text-white hidden sm:block">D-Chat</span>
+            </div>
+            <a href="https://dchat.desinix.co.in" class="px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-sm font-semibold transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
+                Launch App <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section class="relative pt-48 pb-20 px-6 flex flex-col items-center justify-center min-h-screen text-center">
+        <!-- Brand Logo as Focal Point 
+        <div class="reveal mb-12">
+            <img src="dchat logo.png" alt="D-Chat Hero" class="h-32 md:h-48 w-auto object-contain logo-main drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+        </div>-->
+
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest mb-8 reveal">
+            <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+            Titanium Ultimate Edition
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-white mb-6 reveal leading-[1.1] max-w-5xl">
+            Communication, <br/>
+            <span class="text-gradient">redefined.</span>
+        </h1>
+        
+        <p class="text-lg md:text-2xl text-slate-400 font-medium mb-10 reveal delay-100">
+            Fast • Secure • Private Messaging
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 reveal delay-200">
+            <a href="#features" class="px-8 py-4 bg-white text-slate-950 font-bold rounded-2xl hover:bg-slate-200 transition-all shadow-xl shadow-white/10">
+                Explore Features
+            </a>
+            <a href="#developer" class="px-8 py-4 glass border border-white/10 text-white font-bold rounded-2xl hover:bg-white/5 transition-all">
+                Meet the Architects
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. About Description -->
+    <section class="py-24 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="glass-card p-12 md:p-16 rounded-[2.5rem] text-center reveal border-t border-white/10 shadow-2xl overflow-hidden group">
+                <div class="w-24 h-24 bg-slate-800 rounded-3xl flex items-center justify-center mx-auto mb-8 border border-slate-700">
+                    <img src="dchat logo.png" alt="Logo Icon" class="w-14 h-14 object-contain logo-main">
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                    Enterprise-grade communication.
+                </h2>
+                <p class="text-slate-400 text-lg md:text-xl leading-relaxed">
+                    D-Chat is built for teams and individuals who demand excellence. We stripped away the noise to bring you a clean, lightning-fast platform that prioritizes your privacy through secure OTP authentication and isolated environments.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Features Section (Condensed for clarity) -->
+    <section id="features" class="py-24 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-8 rounded-3xl reveal">
+                    <i data-lucide="message-square-text" class="w-10 h-10 text-blue-400 mb-6"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Instant Messaging</h3>
+                    <p class="text-slate-400 text-sm">Real-time sync with advanced media sharing.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl reveal delay-100">
+                    <i data-lucide="video" class="w-10 h-10 text-emerald-400 mb-6"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">HD Calls</h3>
+                    <p class="text-slate-400 text-sm">Crystal clear VoIP and video conferencing.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl reveal delay-200">
+                    <i data-lucide="shield-check" class="w-10 h-10 text-purple-400 mb-6"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">OTP Login</h3>
+                    <p class="text-slate-400 text-sm">Passwordless, ultra-secure authentication.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl reveal delay-300">
+                    <i data-lucide="zap" class="w-10 h-10 text-amber-400 mb-6"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Performance</h3>
+                    <p class="text-slate-400 text-sm">Built for speed on serverless architecture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Developer Section -->
+    <section id="developer" class="py-24 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-[#0b1121] p-12 md:p-16 rounded-[2.5rem] border border-white/5 reveal flex flex-col md:flex-row items-center gap-12">
+                <div class="w-48 h-48 md:w-64 md:h-64 shrink-0 rounded-full bg-gradient-to-br from-slate-800 to-slate-900 border-4 border-slate-700 flex items-center justify-center shadow-2xl relative overflow-hidden">
+                    <!-- Giant Logo in Developer Profile -->
+                    <img src="dchat logo.png" alt="Desinix Logo" class="w-32 md:w-40 h-auto object-contain logo-main">
+                </div>
+
+                <div class="text-center md:text-left">
+                    <p class="text-blue-400 font-mono text-xs tracking-widest mb-2 uppercase">Lead Architect</p>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Built by <span class="text-gradient-alt">Desinix</span></h2>
+                    <p class="text-slate-400 text-lg mb-8">
+                        Crafting elite digital tools for the modern era. Desinix specializes in secure enterprise ecosystems and high-performance applications.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                        <a href="https://www.desinix.co.in" target="_blank" class="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-xl text-white text-sm font-semibold transition-all">
+                            Visit Website
+                        </a>
+                        <a href="mailto:support@desinix.co.in" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-xl text-white text-sm font-semibold transition-all">
+                            Contact Support
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 glass py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-4">
+                <img src="dchat logo.png" alt="D-Chat" class="h-10 w-auto logo-main opacity-80">
+                <span class="text-lg font-bold text-white">D-Chat</span>
+            </div>
+            <div class="text-slate-500 text-sm">
+                &copy; 2026  D-Chat & Desinix Solutions. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach((el) => {
+                const top = el.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) el.classList.add('active');
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) navbar.classList.add('h-20', 'bg-slate-950/90');
+            else navbar.classList.remove('h-20', 'bg-slate-950/90');
+        });
+    </script>
+</body>
+</html>
